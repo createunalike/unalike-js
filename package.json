@@ -1,5 +1,6 @@
 {
     "name": "@createunalike/unalike-js",
+    "version": "0.13.0",
     "description": "JavaScript library for Unalike",
     "license": "MIT",
     "url": "https://github.com/unalike/unalike-js",
@@ -8,7 +9,6 @@
         "content",
         "api"
     ],
-    "version": "0.12.1",
     "author": "Unalike <hello@unalike.net>",
     "repository": {
         "type": "git",
