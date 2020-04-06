@@ -1,0 +1,15 @@
+{
+  "name": "unalike-js",
+  "version": "0.13.0",
+  "description": "JavaScript library for Unalike",
+  "main": "unalike.min.js",
+  "license": "MIT",
+  "author": "Unalike <hello@unalike.net>",
+  "homepage": "https://unalike.net",
+  "ignore": [
+    "**/.*",
+    "package-lock.json",
+    "package.json"
+  ]
+}
+  
