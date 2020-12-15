@@ -1,6 +1,6 @@
 {
     "name": "@createunalike/unalike-js",
-    "version": "0.14.3",
+    "version": "0.15.0",
     "description": "JavaScript library for Unalike",
     "license": "MIT",
     "url": "https://github.com/unalike/unalike-js",
@@ -18,7 +18,7 @@
     "module": "unalike.esm.js",
     "devDependencies": {},
     "dependencies": {
-        "core-js": "^3.6.5",
-        "cross-fetch": "^3.0.5"
+        "core-js": "^3.8.1",
+        "cross-fetch": "^3.0.6"
     }
 }
