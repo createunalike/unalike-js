@@ -1,6 +1,6 @@
 {
   "name": "unalike-js",
-  "version": "0.15.0",
+  "version": "0.15.1",
   "description": "JavaScript library for Unalike",
   "main": "unalike.min.js",
   "license": "MIT",
