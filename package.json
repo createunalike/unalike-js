@@ -3,7 +3,6 @@
   "version": "0.17.0",
   "description": "Unalike Javascript SDK",
   "license": "MIT",
-  "private": true,
   "keywords": [
     "unalike",
     "content",
