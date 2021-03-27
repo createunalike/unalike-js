@@ -1,5 +1,3 @@
-[![CircleCI](https://circleci.com/gh/createunalike/unalike-js.svg?style=svg)](https://circleci.com/gh/createunalike/unalike-js)
-
 ## Unalike API JavaScript
 
 ### Installation
@@ -27,6 +25,15 @@ bower install unalike-js
 ```
 https://unpkg.com/@createunalike/unalike-js
 ```
+
+### Testing
+
+Requires a .env file or the following environment variables.
+
+    TOKEN
+    REPOSITORY
+    API
+    AUTH_USER
 
 ### License
 

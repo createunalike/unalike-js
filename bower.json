@@ -1,15 +1,23 @@
 {
   "name": "unalike-js",
-  "version": "0.16.3",
+  "version": "0.17.0",
   "description": "JavaScript library for Unalike",
-  "main": "unalike.min.js",
+  "main": "dist/unalike.min.js",
   "license": "MIT",
   "author": "Unalike <hello@unalike.net>",
-  "homepage": "https://unalike.net",
+  "homepage": "https://www.unalike.net",
   "ignore": [
     "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
     "package-lock.json",
     "package.json"
+  ],
+  "keywords": [
+    "unalike",
+    "cms",
+    "content"
   ]
 }
   
