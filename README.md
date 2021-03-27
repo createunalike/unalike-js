@@ -32,14 +32,12 @@ Requires a .env file or the following environment variables.
 
     TOKEN
     REPOSITORY
-    API
-    AUTH_USER
 
 ### License
 
 This software is licensed under the MIT License, quoted below.
 
-Copyright (c) 2019 Things That Ltd
+Copyright (c) 2021 Things That Ltd
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
