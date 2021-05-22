@@ -1,6 +1,12 @@
-## Unalike API JavaScript
+# Unalike JavaScript SDK
 
-### Installation
+Unalike is a publishing platform designed for content creators and publishers, allowing them to build publications and communities. It's a headless publication management solution that allows teams to integrate with the modern software stacks, offering a central hub for structured publication, content, management, and delivery.
+
+This JavaScript SDK is for the Unalike API, so you can easily access publications and content stored in Unalike with your JavaScript applications.
+
+![GitHub package.json version](https://img.shields.io/github/package-json/v/createunalike/unalike-js) [![GitHub license](https://img.shields.io/github/license/createunalike/unalike-js)](https://github.com/createunalike/unalike-js/blob/master/LICENSE) ![Release workflow](https://github.com/createunalike/unalike-js/actions/workflows/main.yml/badge.svg) ![GitHub issues](https://img.shields.io/github/issues/createunalike/unalike-js)
+
+## Installation
 
 The kit is universal, it can be used:
 
@@ -8,32 +14,32 @@ The kit is universal, it can be used:
 * Client-side as part of your build with Browserify, Webpack
 * Client-side with a script tag
 
-#### NPM
+### NPM
 
 ```sh
 npm install @createunalike/unalike-js --save
 ```
 
-#### Bower
+### Bower
 
 ```sh
 bower install unalike-js
 ```
 
-#### CDN
+### CDN
 
 ```
 https://unpkg.com/@createunalike/unalike-js
 ```
 
-### Testing
+## Testing
 
 Requires a .env file or the following environment variables.
 
     TOKEN
     REPOSITORY
 
-### License
+## License
 
 This software is licensed under the MIT License, quoted below.
 
