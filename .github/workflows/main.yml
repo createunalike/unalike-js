@@ -33,3 +33,23 @@ jobs:
       uses: JS-DevTools/npm-publish@v1
       with:
         token: ${{ secrets.NPM_TOKEN }}
+
+    - name: get-npm-version
+      uses: martinbeentjes/npm-get-version-action@master
+      id: package-version
+
+    - name: Changelog
+      uses: glennawatson/ChangeLog@v1
+      id: changelog
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        name: Release v${{ steps.package-version.outputs.current-version}}
+        tag_name: v${{ steps.package-version.outputs.current-version}}
+        body: |
+            ${{ steps.changelog.outputs.changelog }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    
