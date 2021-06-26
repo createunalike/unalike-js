@@ -49,10 +49,9 @@ jobs:
         tag_name: v${{ steps.package-version.outputs.current-version}}
         body: |
             ${{ steps.changelog.outputs.changelog }}
-        with:
-          files: |
-            dist/unalike.esm.js
-            dist/unalike.min.js
+        files: |
+          dist/unalike.esm.js
+          dist/unalike.min.js
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
