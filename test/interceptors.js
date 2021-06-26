@@ -10,13 +10,16 @@ module.exports = () => {
 
             const client = new Client();
             client.setToken(process.env.TOKEN);
-            client.interceptors.request.use((options) => {
+            client.interceptors.request.use(({options}) => {
                 
+                assert.isNotNull(options);
                 options.headers['x-ping'] = 'hello';
                 
             });
             client.get('/')
                     .then(function(response) {
+
+                        assert.isNotNull(response);
 
                         assert.exists(response.data.name);
                         assert.exists(response.data.version);
@@ -35,13 +38,15 @@ module.exports = () => {
 
             const client = new Client();
             client.setToken(process.env.TOKEN);
-            client.interceptors.request.use((options) => {
+            client.interceptors.request.use(({options}) => {
                 
+                assert.isNotNull(options);
                 options.headers['x-ping'] = 'hello';
                 
             });
-            client.interceptors.fulfilled.use((response) => {
-                
+            client.interceptors.fulfilled.use(({response}) => {
+
+                assert.isNotNull(response);
                 assert.exists(response.headers['x-ping']);
                 assert.equal(response.headers['x-ping'], `hello`);
                         
@@ -49,6 +54,7 @@ module.exports = () => {
             client.get('/')
                     .then(function(response) {
 
+                        assert.isNotNull(response);
                         assert.exists(response.data.name);
                         assert.exists(response.data.version);
                         

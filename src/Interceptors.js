@@ -16,10 +16,10 @@ class Interceptors {
         
     }
 
-    forEach(response) {
+    forEach(value) {
 
         for (const handler of this.handlers) {
-            handler(response);
+            handler(value);
         }
         
     }

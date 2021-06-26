@@ -6,8 +6,8 @@ require('./interceptors')();
 
 require('./error-handling')(mock);
 require('./content/repository')(mock);
-require('./content/content')(mock);
-require('./content/content-status')(mock);
-require('./content/content-query')(mock);
-require('./content/content-delete')(mock);
+require('./content')(mock);
+require('./content/status')(mock);
+require('./content/query')(mock);
+require('./content/delete')(mock);
 require('./transformer')(mock);

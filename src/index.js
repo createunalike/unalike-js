@@ -169,13 +169,13 @@ class Client {
 
     }
 
-    async get(endpoint, params) {
+    async get(endpoint, params, options) {
 
         const url = this.buildUrl(`${this.url}${endpoint}`, params);
 
         const response = await this.request(url, Object.assign({}, this.options, {
             method: 'GET',
-        }));
+        }, options));
 
         if (this.debug) {
             console.log('unalike-js', 'url', url);
@@ -206,7 +206,7 @@ class Client {
 
     }
 
-    async put(endpoint, params, data) {
+    async put(endpoint, params, data, options) {
 
         this.requiresToken();
 
@@ -215,7 +215,7 @@ class Client {
         const response = await this.request(url, Object.assign({}, this.options, {
             method: 'PUT',
             data,
-        }));
+        }, options));
 
         if (this.debug) {
             console.log('unalike-js', 'url', url);
@@ -227,7 +227,7 @@ class Client {
 
     }
 
-    async delete(endpoint, params) {
+    async delete(endpoint, params, options) {
 
         this.requiresToken();
 
@@ -235,7 +235,7 @@ class Client {
 
         const response = await this.request(url, Object.assign({}, this.options, {
             method: 'DELETE',
-        }));
+        }, options));
 
         if (this.debug) {
             console.log('unalike-js', 'url', url);
@@ -284,36 +284,38 @@ class Client {
             throw new Error('Request timed out');
         }, options.timeout);
 
+        let response;
+
         try {
 
             // Request options intercepters
-            this.interceptors.request.forEach(options);
+            this.interceptors.request.forEach({url, options});
             
             // Make response
-            const response = await axios(url, options);
+            response = await axios(url, options);
             
             clearTimeout(timeoutTimer);
 
             // Clean headers
             // End response to user
-            const endResponse = {
+            response = {
                 headers: response.headers,
                 status: response.status,
                 data: response.data,
             };
 
-            if (endResponse.status >= 400) {
+            if (response.status >= 400) {
                 
-                throw new ResponseError(endResponse);
+                throw new ResponseError({url, options, response});
 
             } else {
             
                 // Dispatch fulfilled intercepters
-                this.interceptors.fulfilled.forEach(endResponse);
+                this.interceptors.fulfilled.forEach({url, options, response});
 
             }
 
-            return endResponse;
+            return response;
 
         } catch (err) {
 
@@ -321,18 +323,18 @@ class Client {
 
             if ('response' in err) { 
 
-                const endResponse = {
+                response = {
                     headers: err.response.headers,
                     status: err.response.status,
                     data: err.response.data,
                 };
 
-                const responseError = new ResponseError(endResponse);
+                const error = new ResponseError(response);
 
                 // Dispatch rejected intercepters
-                this.interceptors.rejected.forEach(responseError);
+                this.interceptors.rejected.forEach({url, options, error});
                     
-                throw responseError;
+                throw error;
 
             }
 
