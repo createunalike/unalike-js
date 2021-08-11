@@ -22,8 +22,7 @@ module.exports = () => {
                         assert.isNotNull(response);
 
                         assert.exists(response.data.name);
-                        assert.exists(response.data.version);
-
+                       
                         assert.exists(response.headers['x-ping']);
                         assert.equal(response.headers['x-ping'], `hello`);
                         
@@ -56,7 +55,6 @@ module.exports = () => {
 
                         assert.isNotNull(response);
                         assert.exists(response.data.name);
-                        assert.exists(response.data.version);
                         
                         done();
 

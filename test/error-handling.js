@@ -49,7 +49,7 @@ module.exports = (mock) => {
 
                         assert.isNotNull(e, 'No error object');
                         assert.strictEqual(e.status, 200, 'Exception status not 200');
-                        assert.equal(e.message, 'Query error');
+                        assert.equal(e.message, `Couldn't find that.`);
 
                         assert.isNotNull(e.errors, 'No graphql errors array');
                         assert.strictEqual(e.errors[0].status, 404, 'GraphQL error status not 404');
