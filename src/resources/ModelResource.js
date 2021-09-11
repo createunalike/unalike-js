@@ -82,15 +82,10 @@ class ModelResource extends Resource {
 
         const variables = {
             repositoryId: this.variables.repository,
-            sortBy: this.variables.sortBy,
-            sortDirection: this.variables.sortDirection,
-            pageSize: this.variables.pageSize,
-            page: this.variables.page,
-            status: this.variables.status,
         };
 
-        const response = await this.client.query(`query models($repositoryId: ID!, $sortBy: String, $sortDirection: SortDirection, $pageSize: Int, $page: Int, $type: [String], $status: [String]) {
-            models(repositoryId: $repositoryId, sortBy: $sortBy, sortDirection: $sortDirection, pageSize: $pageSize, page: $page, type: $type, status: $status) {
+        const response = await this.client.query(`query models($repositoryId: ID) {
+            models(repositoryId: $repositoryId) {
                 ${fields}
             }
         }`, variables);

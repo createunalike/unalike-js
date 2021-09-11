@@ -1,6 +1,6 @@
 {
   "name": "@createunalike/unalike-js",
-  "version": "0.17.5",
+  "version": "0.17.6",
   "description": "Unalike Javascript SDK",
   "license": "MIT",
   "keywords": [
@@ -8,7 +8,7 @@
     "content",
     "api"
   ],
-  "author": "Unalike <hello@unalike.net>",
+  "author": "Unalike <hello@unalike.xyz>",
   "main": "dist/unalike.min.js",
   "module": "dist/unalike.esm.js",
   "scripts": {

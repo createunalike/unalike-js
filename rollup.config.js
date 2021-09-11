@@ -35,7 +35,7 @@ export default [
             license({
                 banner: `/*!
 * unalike-js v${version}
-* (c) <%= moment().format('YYYY') %> Unalike <hello@unalike.net> (https://www.unalike.net/)
+* (c) <%= moment().format('YYYY') %> Unalike <hello@unalike.xyz> (https://www.unalike.xyz/)
 * Released under the MIT License.
 */`,
             }),
@@ -70,7 +70,7 @@ export default [
             license({
                 banner: `/*!
 * unalike-js v${version}
-* (c) <%= moment().format('YYYY') %> Unalike <hello@unalike.net> (https://www.unalike.net/)
+* (c) <%= moment().format('YYYY') %> Unalike <hello@unalike.xyz> (https://www.unalike.xyz/)
 * Released under the MIT License.
 */`,
             }),
